@@ -1,0 +1,582 @@
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Center content for login/register pages */
+body:not(.has-navbar) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================================
+   LAYOUT WITH SIDEBAR
+   ============================================ */
+body.has-navbar {
+    display: block;
+    padding-left: 220px;
+}
+
+.main-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ============================================
+   LEFT SIDEBAR NAVIGATION
+   ============================================ */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background: linear-gradient(180deg, #2d3748 0%, #1a202c 100%);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.sidebar-brand {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #4a5568;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.sidebar-nav a {
+    color: #a0aec0;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-nav a:hover {
+    background: #4a5568;
+    color: white;
+}
+
+.sidebar-nav a.active {
+    background: #667eea;
+    color: white;
+}
+
+.sidebar-nav a.logout-btn {
+    margin-top: auto;
+    background: #e74c3c;
+    color: white;
+}
+
+.sidebar-nav a.logout-btn:hover {
+    background: #c0392b;
+}
+
+/* Sidebar icons using CSS */
+.sidebar-nav a::before {
+    content: '▸';
+    font-size: 12px;
+}
+
+.sidebar-nav a.active::before {
+    content: '✓';
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* ============================================
+   CONTAINER STYLES
+   ============================================ */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Wider container for dashboard and profile */
+.container.wide {
+    max-width: 600px;
+}
+
+/* Even wider for course registration */
+.container.wider {
+    max-width: 700px;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+h1.center {
+    text-align: center;
+}
+
+h1.with-subtitle {
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+p.subtitle,
+.subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+
+p.welcome-text {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* ============================================
+   FORM STYLES
+   ============================================ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+label.checkbox-label {
+    display: inline;
+    margin: 0;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #5568d3;
+}
+
+.btn-block,
+.btn.full-width {
+    display: block;
+    width: 100%;
+    padding: 14px;
+}
+
+.btn-success {
+    background: #28a745;
+}
+
+.btn-success:hover {
+    background: #218838;
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.btn-danger {
+    background: #e74c3c;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+}
+
+/* ============================================
+   MESSAGE STYLES
+   ============================================ */
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.success,
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error,
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Legacy class names */
+.error-msg {
+    background: #fee;
+    color: #c33;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.success-msg {
+    background: #efe;
+    color: #3c3;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ============================================
+   LINK STYLES
+   ============================================ */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #667eea;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* ============================================
+   COURSE LIST STYLES
+   ============================================ */
+.courses-section {
+    margin-bottom: 30px;
+}
+
+.course-list {
+    list-style: none;
+}
+
+.course-list li {
+    background: #f8f9fa;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 4px solid #667eea;
+    color: #555;
+}
+
+.no-courses {
+    color: #999;
+    font-style: italic;
+}
+
+/* ============================================
+   PROFILE STYLES
+   ============================================ */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #667eea;
+    margin-bottom: 20px;
+    background: #f0f0f0;
+}
+
+.info-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.info-group label {
+    display: block;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.info-group p {
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 0;
+}
+
+/* ============================================
+   UPLOAD SECTION STYLES
+   ============================================ */
+.upload-section {
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.upload-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.file-input-wrapper {
+    position: relative;
+}
+
+.file-input-wrapper input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px dashed #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-input-wrapper input[type="file"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* ============================================
+   COURSE REGISTRATION STYLES
+   ============================================ */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.checkbox-item:hover {
+    background: #e9ecef;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.checkbox-item label {
+    margin: 0;
+    cursor: pointer;
+    color: #333;
+    font-weight: normal;
+}
+
+/* ============================================
+   REGISTERED COURSES DISPLAY
+   ============================================ */
+.registered-courses {
+    margin-bottom: 20px;
+}
+
+.registered-courses strong {
+    color: #333;
+}
+
+.registered-courses ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    color: #555;
+}
+
+.registered-courses li {
+    margin-bottom: 5px;
+}
+
+/* ============================================
+   UNIT INFO STYLES
+   ============================================ */
+.unit-info {
+    background: #e8f4f8;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.unit-info p {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.unit-info strong {
+    color: #667eea;
+    font-size: 18px;
+}
+
+.total-units {
+    background: #e8f4f8;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.total-units p {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.total-units strong {
+    color: #667eea;
+    font-size: 18px;
+}
+
+/* ============================================
+   CONFIRMATION PAGE STYLES
+   ============================================ */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+}
+
+.success-message h1 {
+    color: #155724;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    color: #155724;
+    margin: 0;
+}
+
+.student-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.student-info p {
+    margin: 5px 0;
+    color: #333;
+}
